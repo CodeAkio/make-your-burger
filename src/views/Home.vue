@@ -13,6 +13,9 @@ import BurgerForm from "../components/BurgerForm.vue";
 
 export default {
   name: "Home",
+  created() {
+    document.title = "Make Your Burger";
+  },
   components: {
     Banner,
     BurgerForm,

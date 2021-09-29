@@ -10,6 +10,9 @@ import Dashboard from "../components/Dashboard.vue";
 
 export default {
   name: "Pedidos",
+  created() {
+    document.title = "Make Your Burger | Pedidos";
+  },
   components: {
     Dashboard,
   },
