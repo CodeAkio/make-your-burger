@@ -18,8 +18,8 @@
         <div>{{ burger.carne }}</div>
         <div>
           <ul>
-            <li v-for="(opcional, index) in burger.opcionais" :key="index">
-              {{ opcional }}
+            <li v-for="opcional in burger.opcionais" :key="opcional.id">
+              {{ opcional.tipo }}
             </li>
           </ul>
         </div>
@@ -48,7 +48,7 @@ export default {
     async getPedidos() {
       const req = await fetch("http://localhost:3000/burgers");
 
-      const data = req.json();
+      const data = await req.json();
 
       this.burgers = data;
     },
