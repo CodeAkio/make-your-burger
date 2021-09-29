@@ -96,19 +96,6 @@
       "id": 5
     },
     {
-      "nome": "Maria",
-      "pao": "Italiano Branco",
-      "carne": "Veggie burger",
-      "opcionais": [
-        {
-          "id": 3,
-          "tipo": "Salame"
-        }
-      ],
-      "status": "Em produção",
-      "id": 6
-    },
-    {
       "nome": "Marcos",
       "pao": "Parmesão e Orégano",
       "carne": "Picanha",
@@ -118,7 +105,7 @@
           "tipo": "Tomate"
         }
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 7
     },
     {
@@ -131,7 +118,7 @@
           "tipo": "Cebola roxa"
         }
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 8
     },
     {
@@ -146,19 +133,6 @@
       ],
       "status": "Solicitado",
       "id": 10
-    },
-    {
-      "nome": "Renan",
-      "pao": "3 Queijos",
-      "carne": "Maminha",
-      "opcionais": [
-        {
-          "id": 4,
-          "tipo": "Tomate"
-        }
-      ],
-      "status": "Solicitado",
-      "id": 11
     }
   ]
 }
