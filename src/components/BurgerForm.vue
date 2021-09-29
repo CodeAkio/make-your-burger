@@ -2,7 +2,7 @@
   <div>
     <p>Componente Mensagem</p>
     <div>
-      <form id="burger-form">
+      <form id="burger-form" @submit="createBurger">
         <div class="input-container">
           <label for="nome">Nome do cliente:</label>
           <input
@@ -73,7 +73,6 @@ export default {
       pao: null,
       carne: null,
       opcionais: [],
-      status: "Solicitado",
       msg: null,
     };
   },
@@ -85,6 +84,36 @@ export default {
       this.paes = data.paes;
       this.carnes = data.carnes;
       this.opcionaisData = data.opcionais;
+    },
+    async createBurger(event) {
+      event.preventDefault();
+
+      const data = {
+        nome: this.nome,
+        pao: this.pao,
+        carne: this.carne,
+        opcionais: Array.from(this.opcionais),
+        status: "Solicitado",
+      };
+
+      const dataJson = JSON.stringify(data);
+
+      try {
+        const req = await fetch("http://localhost:3000/burgers", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: dataJson,
+        });
+
+        await req.json();
+
+        this.nome = "";
+        this.pao = "";
+        this.carne = "";
+        this.opcionais = [];
+      } catch (error) {
+        alert("Não foi possível criar o seu Burger");
+      }
     },
   },
   mounted() {
